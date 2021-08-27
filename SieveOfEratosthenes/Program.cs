@@ -44,7 +44,7 @@ namespace SieveOfEratosthenes
         {
             var primeNumbers = new List<int>();
 
-            for (int i = 0; i < max; i++)
+            for (int i = 0; i <= max; i++)
             {
                 if (sieve[i])
                     primeNumbers.Add(i);
