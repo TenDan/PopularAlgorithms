@@ -50,18 +50,7 @@ namespace SieveOfEratosthenes
                     primeNumbers.Add(i);
             }
 
-            PrintArrayValues(primeNumbers.ToArray());
-        }
-
-        static void PrintArrayValues<T>(T[] array)
-        {
-            int iteration = 0;
-            Array.ForEach(array, x => {
-                ++iteration;
-                Console.Write(x);
-                if (iteration <= array.Length - 1)
-                    Console.Write(", ");
-            });
+            Console.WriteLine(string.Join(", ", primeNumbers));
         }
     }
 }
