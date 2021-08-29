@@ -37,9 +37,11 @@ namespace SieveOfEratosthenes
                 }
             }
 
+            PrintPrimeNumbersWithoutHelperList(max, A);
             PrintPrimeNumbers(max, A);
         }
 
+        // Faster printing, more memory used
         static void PrintPrimeNumbers(int max, bool[] sieve)
         {
             var primeNumbers = new List<int>();
@@ -51,6 +53,16 @@ namespace SieveOfEratosthenes
             }
 
             Console.WriteLine(string.Join(", ", primeNumbers));
+        }
+
+        // Slower printing, less memory used
+        static void PrintPrimeNumbersWithoutHelperList(int max, bool[] sieve)
+        {
+            for (int i = 0; i <= max; i++)
+            {
+                if (sieve[i])
+                    Console.Write("{0} ", i);
+            }
         }
     }
 }
